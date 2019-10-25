@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Ahora no me hacer el build cada vez <code>src/App.js</code> and save to reload.
+          El código de la rama feature  <code>src/App.js</code> ha sido agregado al master para el deployment
         </p>
         <a
           className="App-link"
