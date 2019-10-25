@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t lavinascoz/devworkflow -f Dockerfile.dev .    
+
+script:
+  - docker run lavinascoz/devworkflow npm run test -- --coverage
+  
