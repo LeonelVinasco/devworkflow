@@ -7,4 +7,16 @@ before_install:
 
 script:
   - docker run -e CI=true lavinascoz/devworkflow npm run test -- --coverage
-  
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "dockerdevworkflow"
+  env: "Dockerdevworkflow-env"
+  bucket_name: "elasticbeanstalk-us-east-2-203810783092"
+  bucket_path: "dockerdevworkflow"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
